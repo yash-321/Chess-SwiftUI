@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChessApp: App {
+    var gameSettings = GameSettings()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BoardView()
+                .environmentObject(Game(from: gameSettings))
         }
     }
 }
