@@ -12,22 +12,30 @@ struct BoardView: View {
     
     var body: some View {
         ZStack {
-            Color.gray
+            Color.black
                 .ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                ForEach(0..<8, id: \.self) { row in
-                    HStack(spacing: 0) {
-                        ForEach(0..<8, id: \.self) { col in
-                            if (row + col).isMultiple(of: 2) {
-                                CellView(cell: Cell(row: row, column: col, piece: Rook(colour: .Black)), colour: .black)
-                            } else {
-                                CellView(cell: Cell(row: row, column: col, piece: Rook(colour: .Black)), colour: .gray)
+            VStack {
+                Text("Chess")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                VStack(spacing: 0) {
+                    ForEach(0..<8, id: \.self) { row in
+                        HStack(spacing: 0) {
+                            ForEach(0..<8, id: \.self) { col in
+                                if (row + col).isMultiple(of: 2) {
+                                    CellView(cell: game.boardState.getCell(x: row, y: col), colour: .black)
+                                } else {
+                                    CellView(cell: game.boardState.getCell(x: row, y: col), colour: .brown)
+                                }
+                                
                             }
-                            
                         }
                     }
                 }
+                Spacer()
             }
         }
     }

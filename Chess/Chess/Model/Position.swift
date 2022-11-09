@@ -8,6 +8,6 @@
 import Foundation
 
 struct Position {
-    var x: Int
-    var y: Int
+    var row: Int
+    var col: Int
 }
