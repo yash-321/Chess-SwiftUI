@@ -175,12 +175,12 @@
 		86A08E3A2914148400E03847 /* Pieces */ = {
 			isa = PBXGroup;
 			children = (
-				86A08E41291421D600E03847 /* Rook.swift */,
-				869C1D752919749500490EAC /* Queen.swift */,
+				869C1D79291974AD00490EAC /* Pawn.swift */,
 				869C1D712919745D00490EAC /* Bishop.swift */,
 				869C1D732919746700490EAC /* Knight.swift */,
+				86A08E41291421D600E03847 /* Rook.swift */,
+				869C1D752919749500490EAC /* Queen.swift */,
 				869C1D77291974A600490EAC /* King.swift */,
-				869C1D79291974AD00490EAC /* Pawn.swift */,
 			);
 			path = Pieces;
 			sourceTree = "<group>";

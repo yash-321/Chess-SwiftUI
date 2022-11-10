@@ -10,19 +10,17 @@ import SwiftUI
 
 class Cell: ObservableObject, Equatable {
     static func == (lhs: Cell, rhs: Cell) -> Bool {
-        return lhs.row == rhs.row && lhs.column == rhs.column
+        return lhs.position == rhs.position
     }
     
-    var row: Int
-    var column: Int
+    var position: Position
     
     @Published var piece: Piece?
     
     var isSelected: Bool
     
     init(row: Int, column: Int, piece: Piece?) {
-        self.row = row
-        self.column = column
+        self.position = Position(row: row, col: column)
         self.piece = piece
         self.isSelected = false
     }

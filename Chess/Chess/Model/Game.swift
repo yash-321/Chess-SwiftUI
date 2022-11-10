@@ -20,6 +20,7 @@ class Game: ObservableObject {
     }
     
     var selectedCell: Cell? = nil
+    var potentialMoves = [Position]()
     
     init(from settings: GameSettings) {
         self.settings = settings
@@ -30,9 +31,20 @@ class Game: ObservableObject {
     func click(on cell: Cell) {
         if cell == selectedCell {
             selectedCell = nil
+            potentialMoves = [Position]()
         } else {
             if cell.piece?.colour == turn {
                 selectedCell = cell
+                potentialMoves = boardState.getLegalMoves(for: cell)
+            } else {
+                if potentialMoves.contains(cell.position) {
+                    if boardState.makeLegalMove(from: selectedCell!.position, to: cell.position) {
+                        print("Game Over")
+                        // TODO 
+                    }
+                    selectedCell = nil
+                    potentialMoves = [Position]()
+                }
             }
         }
         self.objectWillChange.send()

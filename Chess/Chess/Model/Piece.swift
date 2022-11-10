@@ -12,7 +12,7 @@ protocol Piece {
     var colour: PieceColour { get set }
     var image: Image { get set }
     
-    func isLegitMove(from start: Position, to end: Position) -> Bool
+    func isLegitMove(from start: Position, to end: Position, on board: BoardState) -> Bool
 }
 
 extension Piece {

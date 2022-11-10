@@ -23,7 +23,7 @@ struct CellView: View {
                     height: game.settings.squareSize,
                     alignment: .center)
             .background(colour)
-            .border(.red, width: cell == game.selectedCell ? 2 : 0)
+            .border(.red, width: (cell == game.selectedCell ||  game.potentialMoves.contains(cell.position)) ? 2 : 0)
             .onTapGesture {
                 game.click(on: cell)
             }

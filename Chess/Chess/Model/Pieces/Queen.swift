@@ -17,7 +17,7 @@ class Queen: Piece {
         image = colour == .Black ? Image("b-queen") : Image("w-queen")
     }
     
-    func isLegitMove(from start: Position, to end: Position) -> Bool {
-        return true
+    func isLegitMove(from start: Position, to end: Position, on board: BoardState) -> Bool {
+        return Rook(colour: colour).isLegitMove(from: start, to: end, on: board) || Bishop(colour: colour).isLegitMove(from: start, to: end, on: board)
     }
 }

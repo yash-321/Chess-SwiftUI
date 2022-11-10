@@ -10,3 +10,7 @@ import Foundation
 enum PieceColour {
     case Black, White
 }
+
+prefix func !(a: PieceColour) -> PieceColour {
+    return a == .Black ? .White : .Black
+}

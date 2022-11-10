@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Position {
+struct Position: Equatable {
     var row: Int
     var col: Int
 }
